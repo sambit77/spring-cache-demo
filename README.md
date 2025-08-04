@@ -38,6 +38,7 @@ This app demonstrates various annotations related to cache using in-memory cache
 
 - Explore the code to see how caching annotations are used.
 - Try hitting endpoints multiple times to observe the caching behavior.
+- The various endpoints for this application can be obtained using the provided Postman collection.
 
 ## Contributing
 
