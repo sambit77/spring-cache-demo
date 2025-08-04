@@ -1,6 +1,7 @@
 package com.example.springinmemcache.controller;
 
 import com.example.springinmemcache.entity.Weather;
+import com.example.springinmemcache.service.CacheInspectionService;
 import com.example.springinmemcache.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class WeatherController {
 
     @Autowired
     private final WeatherService weatherService;
+
+    @Autowired
+    private final CacheInspectionService cacheInspectionService;
 
     @GetMapping()
     public List<Weather> getAllCityWeatherList()
@@ -31,7 +35,7 @@ public class WeatherController {
     }
 
     @GetMapping("/{city}")
-    public Weather getWeatherForId(@PathVariable String city)
+    public String getWeatherForId(@PathVariable String city)
     {
         System.out.println("Getting weather for city "+city);
         return weatherService.getWeatherByCity(city);
@@ -47,6 +51,12 @@ public class WeatherController {
     public void deleteWeatherByCity(@PathVariable String city)
     {
         weatherService.deleteWeatherByCity(city);
+    }
+
+    @GetMapping("/inspect-cache")
+    public void inspectCache()
+    {
+        cacheInspectionService.printCacheContents("weather");
     }
 
 }

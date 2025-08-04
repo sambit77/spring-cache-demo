@@ -5,6 +5,9 @@ import com.example.springinmemcache.repository.WeatherRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,20 +28,23 @@ public class WeatherService {
         return weatherRepository.save(weather);
     }
 
-    public Weather getWeatherByCity(String city) {
+    @Cacheable(value = "weather", key = "#city")
+    public String getWeatherByCity(String city) {
         Optional<Weather> weatherOptional = weatherRepository.findByCity(city);
-        return weatherOptional.get();
+        return weatherOptional.get().getWeatherDetails();
     }
 
+    @CachePut(value = "weather",key = "#city")
     public String updateWeatherByCity(String city,String weatherUpdate) {
         weatherRepository.findByCity(city).ifPresent(weather -> {
             weather.setWeatherDetails(weatherUpdate);
             weatherRepository.save(weather);
         });
-        return "Updated weather for " + city + " city is :- " + weatherUpdate;
+        return weatherUpdate;
     }
 
     @Transactional
+    @CacheEvict(value = "weather",key = "#city")
     public void deleteWeatherByCity(String city) {
         weatherRepository.deleteByCity(city);
     }
