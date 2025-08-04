@@ -21,21 +21,13 @@ This app demonstrates various annotations related to cache using in-memory cache
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/sambit77/spring-inmem-cache.git
-   cd spring-inmem-cache
+   git clone https://github.com/sambit77/spring-cache-demo.git
+   cd spring-cache-demo
    ```
-
-2. **Build the project**
-   ```bash
-   mvn clean install
-   ```
-
-3. **Run the application**
-   ```bash
-   mvn spring-boot:run
-   ```
-
-4. **Access the app**
+   
+2. **Run the application**
+   
+3. **Access the app**
    - The app will typically be available at: `http://localhost:8080`
 
 ## Usage
