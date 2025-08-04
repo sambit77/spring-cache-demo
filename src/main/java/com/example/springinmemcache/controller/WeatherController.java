@@ -35,7 +35,7 @@ public class WeatherController {
     }
 
     @GetMapping("/{city}")
-    public String getWeatherForId(@PathVariable String city)
+    public String getWeatherForCity(@PathVariable String city)
     {
         System.out.println("Getting weather for city "+city);
         return weatherService.getWeatherByCity(city);
@@ -57,6 +57,13 @@ public class WeatherController {
     public void inspectCache()
     {
         cacheInspectionService.printCacheContents("weather");
+    }
+
+    @GetMapping("/v2/{city}")
+    public String getWeatherForCityUsingRedisTemplate(@PathVariable String city)
+    {
+        System.out.println("Getting weather for city "+city);
+        return weatherService.getWeatherForCityUsingRedisTemplate(city);
     }
 
 }

@@ -20,6 +20,9 @@ public class WeatherService {
     @Autowired
     private final WeatherRepository weatherRepository;
 
+    @Autowired
+    private RedisService redisService;
+
     public List<Weather> getAllCityWeatherList() {
         return weatherRepository.findAll();
     }
@@ -47,5 +50,23 @@ public class WeatherService {
     @CacheEvict(value = "weather",key = "#city")
     public void deleteWeatherByCity(String city) {
         weatherRepository.deleteByCity(city);
+    }
+
+    public String getWeatherForCityUsingRedisTemplate(String city) {
+        String weatherDetails;
+        weatherDetails = redisService.get("weather_of_"+city);
+        if(weatherDetails != null)
+        {
+            System.out.println("Returning response from redis cache......");
+            return weatherDetails;
+        }
+        else
+        {
+            Optional<Weather> weatherOptional = weatherRepository.findByCity(city);
+            weatherDetails = weatherOptional.get().getWeatherDetails();
+            redisService.set("weather_of_"+city,weatherDetails,120L);
+            System.out.println("Returning response from database......");
+            return weatherDetails;
+        }
     }
 }

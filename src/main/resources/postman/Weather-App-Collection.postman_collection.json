@@ -131,6 +131,26 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GetWeatherByCityV2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/weather/v2/manali",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"v2",
+						"manali"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
