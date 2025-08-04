@@ -1,6 +1,6 @@
-**Branch: feature/inmemory-cache**
+**Branch: feature/redis-cache**
 
-This branch is dedicated to demonstrating Spring's caching annotations using an in-memory cache implementation. All examples and configurations here specifically showcase in-memory caching.
+This branch is dedicated to demonstrating Spring's caching annotations using redis cache implementation. All examples and configurations here specifically showcase redis caching, where the data is cached in a redis container spinned up using docker-compose file.
 
 # Spring Cache Demo
 
