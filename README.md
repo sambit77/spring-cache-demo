@@ -1,4 +1,4 @@
-# Spring In-Memory Cache
+# Spring Cache Demo
 
 This app demonstrates various annotations related to cache using in-memory cache with Spring Framework.
 
