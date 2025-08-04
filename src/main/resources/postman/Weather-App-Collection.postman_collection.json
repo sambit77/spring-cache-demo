@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "29a1b2d5-99fa-4995-b943-791921a9cf49",
+		"name": "Weather-App-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40608580"
+	},
+	"item": [
+		{
+			"name": "SaveWeather",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"city\": \"Bengaluru\",\n  \"weatherDetails\": \"Sunny with a high of 32°C\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/weather",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllWeather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/weather",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWeatherByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/weather/Bengaluru",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"Bengaluru"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateWeatherByCity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/weather/Bengaluru?weatherUpdate=Heavy rainfall",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"Bengaluru"
+					],
+					"query": [
+						{
+							"key": "weatherUpdate",
+							"value": "Heavy rainfall"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteWeatherByCity",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/weather/Bengaluru",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"Bengaluru"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspect-Cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inspect-cache",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inspect-cache"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
