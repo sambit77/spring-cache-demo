@@ -1,0 +1,13 @@
+package com.example.springinmemcache;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringInmemCacheApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringInmemCacheApplication.class, args);
+	}
+
+}
