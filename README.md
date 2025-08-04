@@ -9,7 +9,7 @@ This app demonstrates various annotations related to cache using in-memory cache
 ## Features
 
 - Showcases usage of Spring’s caching annotations
-- Uses an in-memory cache implementation
+- Uses a redis cache implementation
 - Example project for learning and demonstration purposes
 
 ## Prerequisites
@@ -33,6 +33,7 @@ This app demonstrates various annotations related to cache using in-memory cache
 - Explore the code to see how caching annotations are used.
 - Try hitting endpoints multiple times to observe the caching behavior.
 - The various endpoints for this application can be obtained using the provided Postman collection.
+- Explore the getWeatherByCityV2 API to get an understanding of redis entries.
 
 ## Contributing
 
