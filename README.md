@@ -1,3 +1,7 @@
+**Branch: feature/inmemory-cache**
+
+This branch is dedicated to demonstrating Spring's caching annotations using an in-memory cache implementation. All examples and configurations here specifically showcase in-memory caching.
+
 # Spring Cache Demo
 
 This app demonstrates various annotations related to cache using in-memory cache with Spring Framework.
